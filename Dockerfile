@@ -10,8 +10,8 @@ RUN apt-get -y remove build-essential pkg-config libusb-dev libsystemd-dev libud
 RUN rm -rf /opt/pcsc-lite
 
 WORKDIR "/root"
-#COPY ifdokccid_linux_x86_64-v4.0.5.5.tar.gz /root/
-#RUN tar -xzf ifdokccid_linux_x86_64-v4.0.5.5.tar.gz && cd ifdokccid_linux_x86_64-v4.0.5.5 && ./install && cd /root && rm -rf /root
+COPY ifdokccid_linux_x86_64-v4.0.5.5.tar.gz /root/
+RUN tar -xzf ifdokccid_linux_x86_64-v4.0.5.5.tar.gz && cd ifdokccid_linux_x86_64-v4.0.5.5 && ./install && cd /root && rm -rf /root
 
 RUN apt-get -y install pcsc-tools pcscd
 
